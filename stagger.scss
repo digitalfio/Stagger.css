@@ -1,0 +1,14 @@
+@mixin animationDelay ($delay) { 
+	-webkit-animation-delay: $delay;  
+	-moz-animation-delay:    $delay;
+	-ms-animation-delay:     $delay; 
+	-o-animation-delay:      $delay;  
+    animation-delay:      $delay; 
+}
+
+$interval: .4s;
+$classesToAdd: 10;
+
+@for $i from 1 to $classesToAdd + 1 {
+	._#{$i} { @include animationDelay($i * $interval); }
+}
